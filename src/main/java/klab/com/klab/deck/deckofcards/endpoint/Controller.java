@@ -1,6 +1,7 @@
 package klab.com.klab.deck.deckofcards.endpoint;
 
 import klab.com.klab.deck.deckofcards.model.Baralho;
+import klab.com.klab.deck.deckofcards.service.BaralhoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,12 +16,11 @@ import java.util.Map;
 public class Controller {
 
     @Autowired
-    public DeckOfCardsClient deckOfCardsClient;
+    public BaralhoService baralhoService;
 
     @GetMapping("/deck/seleciona/")
     public ResponseEntity consultaDeckOfCards() {
-        Baralho resultado = deckOfCardsClient.consultaDeckOfCards();
-        return new ResponseEntity(resultado, HttpStatus.OK);
+        return new ResponseEntity(baralhoService.executa(), HttpStatus.OK);
     }
 
 }
