@@ -17,6 +17,6 @@ public interface DeckOfCardsClient {
     @GetMapping("/new/shuffle/")
     Baralho novoBaralho();
 
-    @GetMapping("/{id}/draw/?count=5")
-    HandsOn compraCartas(@PathVariable String id);
+    @GetMapping("/{id}/draw/")
+    HandsOn compraCartas(@PathVariable String id, @RequestParam("count") String quantidade);
 }

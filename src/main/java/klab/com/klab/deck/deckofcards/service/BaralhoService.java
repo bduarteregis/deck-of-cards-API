@@ -17,9 +17,9 @@ public class BaralhoService {
     @Autowired
     public HandsOnAdapter handsOnAdapter;
 
-    public ArrayList<String> executa() {
+    public ArrayList<String> executa(String quantidade) {
         Baralho baralho = deckOfCardsClient.novoBaralho();
-        HandsOn handsOn = deckOfCardsClient.compraCartas(baralho.deck_id);
+        HandsOn handsOn = deckOfCardsClient.compraCartas(baralho.deck_id, quantidade);
         ArrayList<String> cartas = handsOnAdapter.executa(handsOn);
         return cartas;
     }
