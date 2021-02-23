@@ -1,9 +1,6 @@
 package klab.com.klab.deck.deckofcards.service;
 
-import klab.com.klab.deck.deckofcards.model.CardsValueEnum;
-import klab.com.klab.deck.deckofcards.model.Carta;
-import klab.com.klab.deck.deckofcards.model.HandsOn;
-import klab.com.klab.deck.deckofcards.model.CardsSuitEnum;
+import klab.com.klab.deck.deckofcards.model.*;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,20 +12,21 @@ public class HandsOnAdapter {
     private String traduzCarta(Carta carta) {
         String valor = carta.value;
         if (valor.matches("[A-Z]+")) {
-            valor = CardsValueEnum.valueOf(carta.value).getValor();
+            valor = CartaNaipeEnum.valueOf(carta.value).getValor();
         }
-        return valor + " " + CardsSuitEnum.valueOf(carta.suit).getNaipeTraduzido();
+        return valor + " " + CartaValorEnum.valueOf(carta.suit).getNaipeTraduzido();
     }
 
-    public ArrayList<String> executa(HandsOn handsOn) {
+    public HandsOnJSON executa(HandsOn handsOn) {
 
-        ArrayList<String> cartas = new ArrayList<>();
+        HandsOnJSON handsOnJSON = new HandsOnJSON();
 
         for(Carta carta : handsOn.cards) {
-            cartas.add(traduzCarta(carta));
+            handsOnJSON.cartas.add(traduzCarta(carta));
         }
 
-        return cartas;
+        handsOnJSON.quantidade = handsOnJSON.cartas.size();
+        return handsOnJSON;
     }
 
 }

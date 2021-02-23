@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Map;
-
 @Service
 @FeignClient(url = "https://deckofcardsapi.com/api/deck", name = "deckofcards")
 

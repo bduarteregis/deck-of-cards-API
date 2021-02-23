@@ -1,6 +1,6 @@
 package klab.com.klab.deck.deckofcards.model;
 
-public enum CardsSuitEnum {
+public enum CartaValorEnum {
 
     SPADES("de Espadas"),
     CLUBS("de Paus"),
@@ -9,7 +9,7 @@ public enum CardsSuitEnum {
 
     private String naipe;
 
-    CardsSuitEnum(String traduzNaipe) {
+    CartaValorEnum(String traduzNaipe) {
         this.naipe = traduzNaipe;
     }
 

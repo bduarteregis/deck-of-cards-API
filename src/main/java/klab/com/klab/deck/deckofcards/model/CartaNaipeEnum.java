@@ -1,6 +1,6 @@
 package klab.com.klab.deck.deckofcards.model;
 
-public enum CardsValueEnum {
+public enum CartaNaipeEnum {
 
     KING("Rei"),
     QUEEN("Rainha"),
@@ -9,7 +9,7 @@ public enum CardsValueEnum {
 
     private String valor;
 
-    CardsValueEnum(String valor) {
+    CartaNaipeEnum(String valor) {
         this.valor = valor;
     }
 

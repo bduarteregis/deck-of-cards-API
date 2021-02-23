@@ -1,6 +1,8 @@
 package klab.com.klab.deck.deckofcards.endpoint;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import klab.com.klab.deck.deckofcards.model.Baralho;
+import klab.com.klab.deck.deckofcards.model.HandsOnJSON;
 import klab.com.klab.deck.deckofcards.service.BaralhoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
